@@ -1,0 +1,29 @@
+﻿@model List<Semester_Project.Models.Project>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script>
+    $(document).ready(f1);
+    function f1()
+    {
+        $('#pr1').css("background-color", "rgb(200,200,230)");
+    }
+</script>
+<br />
+<div class="row">
+    <div class="col-lg-10 col-lg-offset-1">
+        <h3>Projects</h3>
+        <hr />
+    </div>
+</div>
+@{
+    foreach(var pr in Model)
+    {
+        <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+            <a class="h3">@pr.Title</a>
+            <p>@pr.Summery</p>
+        </div>
+        </div>
+    }
+}

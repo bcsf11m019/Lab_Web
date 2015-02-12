@@ -1,0 +1,70 @@
+﻿@model List<Semester_Project.Models.Person>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<script>
+    $(document).ready(f1);
+    function f1()
+    {
+        $('#p1').css("background-color", "rgb(200,200,230)");
+    }
+</script>
+<div class="row">
+    <div class="col-lg-10 col-lg-offset-1">
+        <h4>People</h4>
+        <hr />
+    </div>
+</div>
+
+<br />
+
+@{
+    int length=Model.Count;
+    for(int i=0;i<length;i++)
+    {
+         <div class="row" >
+         @if(i<length)
+         {
+         <div class="col-sm-3 col-lg-offset-1">
+           <div class="thumbnail active" style="">
+                <img usemap="image" class="img-rounded" src="~/Scripts/a.jpg" >
+                <div class="caption">
+                    <h3>@Model[i].Name</h3>
+                    <hr/>
+                    <p>@Model[i++].Study</p>
+                </div>
+           </div>
+           </div>
+         }
+       @if(i<length)
+       {
+           <div class="col-sm-3 col-lg-offset-1">
+             <div class="thumbnail active" style="">
+                <img usemap="image" class="img-rounded" src="~/Scripts/a.jpg" >
+                <div class="caption">
+                    <h3>@Model[i].Name</h3>
+                    <hr/>
+                    <p>@Model[i++].Study</p>
+                </div>
+               </div>
+            </div>
+        }
+        @if(i<length)
+        {
+             <div class="col-sm-3 col-lg-offset-1">
+             <div class="thumbnail active" style="">
+                <img usemap="image" class="img-rounded" src="~/Scripts/a.jpg" >
+                <div class="caption">
+                    <h3>@Model[i].Name</h3>
+                    <hr/>
+                    <p>@Model[i].Study</p>
+                </div>
+                </div>
+                
+              </div>
+        }
+        </div> 
+     }
+}
+   

@@ -1,0 +1,51 @@
+﻿
+@model Semester_Project.Models.Project
+@{
+    ViewBag.Title = "AddPeople";
+}
+
+ <div class="row">
+        <div class="col-lg-9 col-lg-offset-1">
+<h2>AddProject</h2>
+            </div>
+     </div>
+
+@using (Html.BeginForm("Add","AdminProject",FormMethod.Post))
+{ 
+    <div class="row">
+        <div class="col-lg-9 col-lg-offset-2">
+               <p>
+               @*@Html.Label("Enter Name:")*@
+               @Html.LabelFor(x => x.Title)
+               </p>
+           
+               @Html.TextBoxFor(x=>x.Title)
+                @Html.ValidationMessageFor(x=>x.Title)
+)
+            <br />
+                <p>
+                    <br />
+               @Html.Label("Enter Summery:")
+                </p>
+
+               @Html.TextBoxFor(x=>x.Summery)
+                @Html.ValidationMessageFor(x=>x.Summery)
+                 <p>
+                    <br />
+               @Html.Label("Enter Details:")
+                </p>
+               @Html.TextBoxFor(x=>x.Details)
+                @Html.ValidationMessageFor(x=>x.Details)
+            <br />
+                @Html.Label("Enter Id of person:")
+            <br />
+                @Html.TextBoxFor(x=>x.People)
+
+            <br />
+            <br />
+            <div>
+            <input type="submit" value="Submit" id="b1" class="btn btn-submit" />
+            </div>
+        </div>
+    </div>
+}

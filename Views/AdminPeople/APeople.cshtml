@@ -1,0 +1,66 @@
+﻿@model List<Semester_Project.Models.Person>
+@{
+    ViewBag.Title = "APeople";
+}
+
+<div class="row">
+        <div class="col-lg-9 col-lg-offset-1">
+            <h2>Admin side/People</h2>
+        </div>
+ </div>
+<div class="row">
+        <div class="col-lg-9 col-lg-offset-1">
+            <div class="panel panel-primary" >
+              <!-- Default panel contents -->
+              <div class="panel-heading" style="height:60px"><b>List of all people in Lab</b>
+                  <button class="btn btn-default pull-right"><a href="/AdminPeople/AddPeople">Add New</a></button>
+              </div>
+              <table class="table">
+                    <tr>
+                        <td>
+                           <b>Id</b>
+                        </td>
+                        <td>
+                           <b>Name</b>
+                        </td>
+                        <td>
+                           <b>Job Title</b>
+                        </td>
+                        <td>
+                            <b>Update</b>
+                        </td>
+                        <td>
+                            <b>Delete</b>
+                        </td>
+                    </tr>
+                  @{
+                      int i=0;
+                       foreach (var p in Model)
+                       {
+                            <tr>
+                                <td>
+                                    @p.Id
+                                </td>
+                                <td>
+                                    @p.Name
+                                </td>      
+                                <td>
+                                    @p.JobTitle
+                                </td>
+                                <td>
+                                    @*<a href="/AdminPeople/UpdatePerson/@p.Id">Update</a>*@
+                                    @*<a href="@Html.ActionLink(linkText:"reply",actionName: "UpdatePerson",controllerName: "AdminPeople",routeValues: new { id=p.Id },htmlAttributes: null)">Update</a>*@
+                                    <a href="@Url.Action(controllerName: "AdminPeople",actionName: "UpdatePerson",routeValues: new { id1=p.Id })">Update</a>
+                                </td>
+                               <td>
+                                    <a href="@Url.Action(controllerName: "AdminPeople",actionName: "Delete",routeValues: new { id1=p.Id })">Delete</a>
+                                </td>
+                            </tr>
+                           i++;
+                       }
+                   }
+                      </table>
+            </div>
+
+        </div>
+ </div>           

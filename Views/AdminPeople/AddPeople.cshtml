@@ -1,0 +1,55 @@
+﻿@model Semester_Project.Models.Person
+@{
+    ViewBag.Title = "AddPeople";
+}
+ <div class="row">
+        <div class="col-lg-9 col-lg-offset-1">
+<h2>AddPeople</h2>
+            </div>
+     </div>
+
+@using (Html.BeginForm("Add","AdminPeople",FormMethod.Post))
+{ 
+    <div class="row">
+        <div class="col-lg-9 col-lg-offset-2">
+               <p>
+               @Html.Label("Enter Name:")
+               @*@Html.LabelFor(x => x.Name)*@
+               </p>
+               @Html.TextBoxFor(x=>x.Name)
+                @Html.ValidationMessageFor(x=>x.Name)
+            <br />
+                <p>
+                    <br />
+               @Html.Label("Enter Jobtitle:")
+                </p>
+               @Html.TextBoxFor(x=>x.JobTitle)
+               @Html.ValidationMessageFor(x=>x.JobTitle)
+                 <p>
+                    <br />
+               @Html.Label("Enter Qualification:")
+                </p>
+               @Html.TextBoxFor(x=>x.Study)
+                          @Html.ValidationMessageFor(x=>x.Study)
+                <p>
+                    <br />
+               @Html.Label("Enter PhoneNo:")
+                </p>
+               @Html.TextBoxFor(x=>x.PhoneNo)
+                          @Html.ValidationMessageFor(x=>x.PhoneNo)
+               <p>
+                    <br />
+               @Html.Label("Enter email address")
+               </p>
+               @Html.TextBoxFor(x=>x.Email)
+                          @Html.ValidationMessageFor(x=>x.Email)
+                <p>
+                    <br />
+            <br />
+            <br />
+            <div>
+            <input type="submit" value="Submit" id="b1" class="btn btn-submit" />
+            </div>
+        </div>
+    </div>
+}

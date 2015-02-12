@@ -1,0 +1,74 @@
+﻿@section scripts{
+    @Scripts.Render("~/Bundles/jqueryval");
+    }
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="viewport" content="width=device-width" />
+    <title>Cv Lab</title>
+    <link href="../../StyleSheet.css" rel="stylesheet" />
+    <script src="~/scripts/jquery-1.7.1.js"></script>
+    <script src="~/scripts/jquery.validate.js"></script>
+    <script src="~/scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/scripts/jquery.validate.min.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jssor.slider.mini.js"></script>
+    <script src="~/Scripts/jquery-2.1.1.js"></script>
+    <script src="~/Scripts/jssor.slider.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    
+
+    <script>
+        $(document).ready(function ($) {
+            var options = { $AutoPlay: true };
+            var jssor_slider1 = new $JssorSlider$('slider1_container', options);
+        });
+    </script>
+     
+</head>
+<body  style="background-color:rgb(180, 200, 255)" >
+     
+     <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Pucit Computer Vision</a>
+        </div>
+
+    </nav>
+     <div class="container">
+     <div class="row">
+     <div class="col-lg-9 col-lg-offset-1">
+
+   
+    <div id="slider1_container" style="position: relative;  width: 950px; height: 300px;">
+    <!-- Slides Container -->
+    <div u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 950px; height: 300px;" >
+
+        <div><img u="image" src="~/Scripts/img1.jpg" /></div>
+        <div><img u="image" src="~/Scripts/img2.jpg" /></div>
+        <div><img u="image" src="~/Scripts/img3.jpg" /></div>
+        
+    </div>
+        
+   
+    
+    <div style="position: relative; background-color:rgba(245,245,245,0.3); top: 250px; left: 500px;  width: 450px; height: 50px;border:hidden " class="panel panel-primary panel-transparent"   >
+
+          <ul class="nav navbar-nav">
+                <li class="active" style="background-color:rgba(150,235,235,0.5)"><a href="/Home/Index" style=" color:black"><b>Home</b></a></li>
+                <li class="active" id="p1"><a id="pe1" href="http://localhost:3196/People/People" style="color:darkred"><b>People</b></a></li>
+                <li class="active" id="r1"><a id="re1" href="http://localhost:3196/Research/Research" style="color:darkred"><b>Research</b></a></li>
+                <li class="active" id="pr1"><a id="pro1" href="http://localhost:3196/Projects/Projects" style="color:darkred"><b>Projects</b></a></li>
+                <li class="active" id="t1"><a id="te1" href="http://localhost:3196/Teachings/Teachings" style="color:darkred"><b>Teachings</b></a></li>
+            </ul>
+    </div>
+    </div>    
+    </div>
+    </div>  
+    <div>
+        @RenderBody()
+    </div>
+    </div>
+
+</body>
+
+</html>

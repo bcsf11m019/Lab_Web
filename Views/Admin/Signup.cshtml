@@ -1,0 +1,88 @@
+﻿@model Semester_Project.Models.Admin
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ <div class="row">
+        <div class="col-lg-9 col-lg-offset-1">
+            <h2>Signup</h2>
+        </div>
+ </div>
+ <script>
+                $(document).ready(f1);
+
+                function f1() {
+                    $('#btn1').on("click", function () {
+                        $.getJSON("checkUser?Username="+$('#tb1').val(), function (d) {
+                            if (d == true) {
+                                $('#l1').text("username exists already");
+                   //             $('#l1').hide(false);
+                                $('#l1').show();
+                            }
+                            else
+                            {
+                                $('#l1').hide(true);
+                            }
+                        });
+                    });
+                }
+ </script>
+@using (Html.BeginForm("Sign","Admin",FormMethod.Post))
+{ 
+    <div class="row">
+        <div class="col-lg-9 col-lg-offset-2">
+               <p>
+                   Enter Firstname: 
+               </p>
+           
+               @Html.TextBoxFor(x=>x.FirstName)
+            @Html.ValidationMessageFor(x=>x.FirstName)
+            <br />
+                <p>
+                    <br />
+                   Enter Lastname:
+                </p>
+               @Html.TextBoxFor(x=>x.LastName);
+            @Html.ValidationMessageFor(x=>x.LastName)
+             <br />
+                <p>
+                    <br />
+                   Enter Username:
+                </p>
+               @Html.TextBoxFor(x => x.Username, new { id="tb1"})
+            @Html.ValidationMessageFor(x => x.Username)
+            <label hidden="hidden" id="l1"></label>
+            <button id="btn1" type="button" value="availability" class="btn btn-default">Check Availability</button>
+
+           
+
+             <br />
+                <p>
+                    <br />
+                   Enter Password:
+                </p>
+               @Html.PasswordFor(x=>x.Password);
+
+             <br />
+                <p>
+                    <br />
+                   Enter Email:
+                </p>
+               @Html.TextBoxFor(x=>x.EmailAddress);
+            @Html.ValidationMessageFor(x=>x.EmailAddress)
+             <br />
+                <p>
+                    <br />
+                   Enter Phoneno:
+                </p>
+               @Html.TextBoxFor(x=>x.PhoneNo);
+            @Html.ValidationMessageFor(x=>x.PhoneNo)
+            <br />
+            <br />
+            <div>
+            <input type="submit" value="Submit" id="b1" class="btn btn-submit" />
+    
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,47 @@
+﻿@model Semester_Project.Models.Person
+
+<div class="row">
+        <div class="col-lg-9 col-lg-offset-1">
+<h2>Update Person</h2>
+            </div>
+     </div>
+
+<form action="/AdminPeople/Update/@Model.Id" method="post" >
+
+    <div class="row">
+        <div class="col-lg-9 col-lg-offset-2">
+               <p>
+               @*@Html.Label("Enter Name:")*@
+               @Html.LabelFor(x => x.Name)
+               </p>
+                
+               @Html.TextBoxFor(x => x.Name, new { value = Model.Name })
+            <br />
+                <p>
+                    <br />
+               @Html.Label("Enter new Jobtitle:")
+                </p>
+               @Html.TextBoxFor(x => x.JobTitle, new { value = Model.JobTitle })
+                 <p>
+                    <br />
+               @Html.Label("Enter new Qualification:")
+                </p>
+               @Html.TextBoxFor(x => x.Study, new { value = Model.Study })
+                <p>
+                    <br />
+               @Html.Label("Enter new PhoneNo:")
+                </p>
+               @Html.TextBoxFor(x => x.PhoneNo, new { value = Model.PhoneNo })
+               <p>
+                    <br />
+               @Html.Label("Enter new email address")
+               </p>
+               @Html.TextBoxFor(x => x.Email, new { value = Model.Email })
+            <br />
+            <br />
+            <div>
+            <input type="submit" value="Submit" id="b1" class="btn btn-submit" />
+            </div>
+        </div>
+    </div>
+</form>
